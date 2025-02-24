@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaMapMarkedAlt, FaGlobeAfrica } from 'react-icons/fa';
-import MAPS from "./MAPS.png"
+import newimage from "./newimage.png"
 
 const Weperate = () => {
   const [modalContent, setModalContent] = useState(null); // State to track which modal is open
@@ -57,7 +57,7 @@ const Weperate = () => {
       {/* Right Section */}
       <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
         <img
-          src={MAPS}
+          src={newimage}
           alt="Map or relevant image"
           className="w-full h-auto max-w-xs lg:max-w-full lg:h-[400px]"
         />
@@ -66,26 +66,50 @@ const Weperate = () => {
       {/* Modal for UAE */}
       {modalContent === 'UAE' && (
         <div className="fixed inset-0 flex lg:p-0 p-6 items-center justify-center font-roboto z-10 bg-black bg-opacity-50">
-          <div className="bg-white p-6 mb-10 rounded-lg shadow-lg max-w-3xl w-full relative">
-            <button 
-              onClick={handleCloseModal} 
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
-            >
-              &times;
-            </button>
-            <h3 className="lg:text-2xl text-xl font-semibold mb-4">IN BAHRAIN</h3>
-            <p className='mb-4'>
-              We operate in several BAHRAIN capitals, offering services that meet your demands nationwide quickly, safely, and with the transparency you need.
-            </p>
-            
-            <button 
-              onClick={handleCloseModal} 
-              className="absolute bottom-1 right-4 mt-10  flex items-center justify-center bg-black text-DarkYellow py-2 px-4 "
-            >
-              To Close
-            </button>
+        <div className="bg-white p-6 mb-10 rounded-lg shadow-lg max-w-3xl w-full relative">
+          {/* Close Button */}
+          <button
+            onClick={handleCloseModal}
+            className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
+          >
+            &times;
+          </button>
+  
+          {/* Modal Header */}
+          <h3 className="lg:text-2xl text-xl font-semibold mb-4">IN BAHRAIN</h3>
+  
+          {/* Modal Description */}
+          <p className="mb-4">
+            We operate in several BAHRAIN capitals, offering services that meet your demands nationwide quickly, safely, and with the transparency you need.
+          </p>
+  
+          {/* Google Map Embed */}
+          <div className="w-full h-80 mb-6 rounded-lg overflow-hidden">
+<iframe
+  title="Central & Northern Bahrain Map"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28900.401362293366!2d50.5005!3d26.1905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f20.5!3m3!1m2!1s0x3e49a82a6e8f07ed%3A0x3c0c4f7a9a0a6b6b!2sIsa%20Town%2C%20Bahrain!5e0!3m2!1sen!2sbh!4v1695721234567!5m2!1sen!2sbh"
+  width="100%"
+  height="100%"
+  style={{ border: "none" }}
+  zoom="10"
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+></iframe>
+
+
+
           </div>
+  
+          {/* Close Button */}
+          <button
+            onClick={handleCloseModal}
+            className="absolute bottom-1 right-4 mt-10 flex items-center justify-center bg-black text-DarkYellow py-2 px-4"
+          >
+            To Close
+          </button>
         </div>
+      </div>
       )}
 
       {/* Modal for World */}

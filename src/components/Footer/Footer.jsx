@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
-import { FaLinkedin, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaFacebook, FaTwitter, FaChevronDown, FaEnvelope,FaMapMarkerAlt, FaPhoneAlt  } from 'react-icons/fa';
 import g4 from './g4.png';
 import white from './white.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleDropdown = () => setIsOpen(!isOpen);
   const handleSubscribe = async () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   
@@ -106,9 +109,72 @@ const Footer = () => {
 
           <p className="mt-4 text-sm text-center lg:text-left">© 2024 GVS Cargo & Logistics. All Rights Reserved.</p>
         </div>
+        <div class="flex flex-col items-center lg:items-start space-y-4 mb-8 lg:mb-0">
+        <div className="max-w-7xl mt-4 mx-auto">
+  <h2 className="text-2xl font-semibold outline rounded-md outline-white text-center p-2 mb-">Get in Touch</h2>
+
+  <div className="flex flex-col space-y-6 mt-6">
+
+    <div className="flex items-start space-x-4">
+      <FaMapMarkerAlt className="text-white mt-1" />
+      <div>
+        <h3 className="text-lg font-medium "></h3>
+        <p>Office 22, Bldg 661, RD 1208,<br />
+          Block 712 - Salmabad,<br />
+          Kingdom Of Bahrain
+        </p>
+      </div>
+    </div>
+
+
+    <div className="flex items-start space-x-4">
+      <FaPhoneAlt className="text-white mt-1" />
+      <div>
+        <h3 className="text-lg font-medium"></h3>
+        <a href="tel:+1234567890" className="hover:underline">+973 17491444</a>
+      </div>
+    </div>
+
+
+    <div className="relative">
+      <button
+        onClick={toggleDropdown}
+        className="flex items-center space-x-4 hover:underline focus:outline-none"
+      >
+        <FaEnvelope className="text-white " />
+        <span className='relative left-1'>Email</span>
+        <FaChevronDown className={`transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
+
+      {isOpen && (
+        <div className="absolute -right-6 top-0 mt-2 bg-white text-black p-3 font-sans rounded-lg shadow-lg z-10">
+          <ul className="space-y-2">
+            <li>
+              <a href="mailto:customercare@gvscargo.com" className="hover:text-[#243670]">
+                Customer Care
+              </a>
+            </li>
+            <li>
+              <a href="mailto:sales@gvscargo.com" className="hover:text-[#243670]">
+                Sales Team
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@gvscargo.com" className="hover:text-[#243670]">
+                Business Enquiries
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
+  </div>
 
         {/* Right Section: Newsletter and Developer Credit */}
-        <div className="flex flex-col items-center lg:items-end space-y-6">
+        <div className="flex flex-col items-center lg:items-end space-y-">
           {/* Newsletter Section */}
           <div className="flex flex-col items-center lg:items-center mb-8">
             <p className="text-lg mb-8">Follow the news:</p>

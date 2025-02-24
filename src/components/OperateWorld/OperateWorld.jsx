@@ -2,7 +2,7 @@ import React from 'react';
 import Bounce from '../Bounce/Bounce';
 import Slide from '../Slide/Slide';
 import ColorBar from '../Colorbar/Colorbar';
-import Maps from "./Maps.png"
+import newimage from "./newimage.png"
 import Slide1 from '../Slide1/Slide1';
 
 const OperateWorld = () => {
@@ -13,7 +13,7 @@ const OperateWorld = () => {
   <p className='text-gray-500 lg:mb-32 font-poppins text-center'>
     GVS Cargo & Logistics is constantly growing in its area of operation, whether through the opening of new branches or important and strategic partnerships with the most renowned companies on each continent. In this way, it offers all its customers a fast, safe, and personalized service, whether for imports, exports, or obtaining all solutions for customs clearance.
   </p>
-  <img src={Maps} alt="Descriptive Alt Text" className="mx-auto lg:h-[500px] mb-6" />
+  <img src={newimage} alt="Descriptive Alt Text" className="mx-auto lg:h-[500px] mb-6" />
   <Bounce />
   
  

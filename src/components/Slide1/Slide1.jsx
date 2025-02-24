@@ -14,11 +14,24 @@ import i9 from "./i9.png";
 import i10 from "./i10.png";
 import i11 from "./i11.png";
 import i12 from "./i12.png";
-
+import i100 from "./i100.png";
+import i101 from "./i101.jpg";
 
 const Slide1 = () => {
-    const images = [i1, i2, i4, i5, i6 ,i7,i8,i9,i10,i11,i12];
+    const images = [i1, i2, i4, i5, i101 ,i7,i8,i9,i10,i11,i12,i100];
     const imageLinks = [
+        "https://example.com/link1",
+        "https://alshaheen.pro/",
+        "https://saffary.com/",
+        "https://alshaheenexpress.com/",
+        "https://gvscargo.net/",
+        "https://gvs-bh.com/",
+        "https://example.com/link8",
+        "https://example.com/link9",
+        "https://www.aquacare.me/",
+        "https://example.com/link11",
+        "https://arabiaseel.com/",
+        "https://alzyara.com/"
         
     ];
 
@@ -90,32 +103,29 @@ const Slide1 = () => {
 
     return (
         <section className="py-10 lg:max-w-7xl mb-1 lg:w-full w-[200px] mx-auto">
-           
-        <div className="">
-            {isLoaded ? (
-                <Slider ref={sliderRef} {...settings}>
-                    {images.map((src, index) => (
-                        <div key={index} className="slide-item">
-                            <a href={imageLinks[index]} target="_blank" rel="noopener noreferrer" className="image-link">
-                                <img
-                                    src={src}
-                                    alt={`Slide ${index + 1}`}
-                                    className="object-contain w-full md:w-4/4 mx-auto slide-image"
-                                    style={{ maxHeight: '200px' }}
-                                />
-                            </a>
-                        </div>
-                    ))}
-                </Slider>
-            ) : (
-                <div className="flex justify-center items-center" style={{ height: '300px' }}>
-                    <span>Loading...</span>
-                </div>
-            )}
-        </div>
-    </section>
-    
-
+            <div className="">
+                {isLoaded ? (
+                    <Slider ref={sliderRef} {...settings}>
+                        {images.map((src, index) => (
+                            <div key={index} className="slide-item">
+                                <a href={imageLinks[index]} target="_blank" rel="noopener noreferrer" className="image-link" style={{ outline: 'none' }}>
+                                    <img
+                                        src={src}
+                                        alt={`Slide ${index + 1}`}
+                                        className="object-contain w-full md:w-4/4 mx-auto slide-image"
+                                        style={{ maxHeight: '200px' }}
+                                    />
+                                </a>
+                            </div>
+                        ))}
+                    </Slider>
+                ) : (
+                    <div className="flex justify-center items-center" style={{ height: '300px' }}>
+                        <span>Loading...</span>
+                    </div>
+                )}
+            </div>
+        </section>
     );
 };
 
